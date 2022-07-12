@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     let eyeButton = UIButton()
     var showPassword = false
     
+    let incorrectLoginLabel = UILabel()
+    let incorrectPasswordLabel = UILabel()
     
     private let loginViewModel = LoginViewModel()
     let disposeBag = DisposeBag()
@@ -66,15 +68,18 @@ class ViewController: UIViewController {
         loginTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValEmail = false})
         passwordTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValPassword = false})
         
-        /*
+        loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValEmail = true})
+        passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValPassword = true})
+        
+       
          
-         TO ZROBIC JAK BEDA CZERWONE PRZYPOMINACZE O ZLYM HASLE I ZLYM LOGINIE!!
+        // TO ZROBIC JAK BEDA CZERWONE PRZYPOMINACZE O ZLYM HASLE I ZLYM LOGINIE!!
          
         //Setting the "INCORRECT EMAIL" and "INCORRECT PASSWORD" Red Labels Invisible and visible depending on the "isEmailValid" and "isPasswordValid"
-        loginViewModel.isEmailValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectEmail.rx.alpha).disposed(by: disposeBag)
-        loginViewModel.isPasswordValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectPassword.rx.alpha).disposed(by: disposeBag)
+        loginViewModel.isEmailValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectLoginLabel.rx.alpha).disposed(by: disposeBag)
+        loginViewModel.isPasswordValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectPasswordLabel.rx.alpha).disposed(by: disposeBag)
     
-        */
+        
     }
        
 }
@@ -93,6 +98,10 @@ extension ViewController{
         loginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 166).isActive = true
         loginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -166).isActive = true
         loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        
+        
     }
     
     
@@ -127,7 +136,17 @@ extension ViewController{
         
         loginTextFieldTopAnchor = loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: textFieldOnPosition)
         loginTextFieldTopAnchor?.isActive = true
-            
+        
+        
+        view.addSubview(incorrectLoginLabel)
+        incorrectLoginLabel.text = "Incorrect Email"
+        incorrectLoginLabel.textColor = UIColor(named: "Neon")
+        incorrectLoginLabel.translatesAutoresizingMaskIntoConstraints = false
+        incorrectLoginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
+        incorrectLoginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        incorrectLoginLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -450).isActive = true
+        
+        
     }
     
     
@@ -146,6 +165,17 @@ extension ViewController{
         passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
         passwordTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
         passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -388).isActive = true
+        
+        
+        view.addSubview(incorrectPasswordLabel)
+        incorrectPasswordLabel.text = "Incorrect Password"
+        incorrectPasswordLabel.textColor = UIColor(named: "Neon")
+        incorrectPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
+        incorrectPasswordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
+        incorrectPasswordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        incorrectPasswordLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -350).isActive = true
+        
+        
     }
     
     private func underlinesSetup(){
