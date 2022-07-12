@@ -14,14 +14,23 @@ var boolValPassword = false
 
 class ViewController: UIViewController {
 
-    let loginLabel = UILabel()
-    let loginButton = UIButton()
+    //header
+    let headerLabel = UILabel()
+    
+    // login & password
     let loginTextField = UITextField()
-    let passwordTextField = UITextField()
+    let loginLabel = UILabel()
     let loginFieldLine = UIView()
+    
+    let passwordTextField = UITextField()
+    let passwordLabel = UILabel()
     let passwordFieldLine = UIView()
+    
+    
     let eyeButton = UIButton()
-    var showPassword = false
+    
+    
+    let loginButton = UIButton()
     
     let incorrectLoginLabel = UILabel()
     let incorrectPasswordLabel = UILabel()
@@ -31,9 +40,14 @@ class ViewController: UIViewController {
     
     // animationsValues
     
-    var textFieldOnPosition : CGFloat = 299
-    var textFIeldOffPosition : CGFloat = 279
+    var loginOnPosition : CGFloat = 299
+    var loginOffPosition : CGFloat = 269
     var loginTextFieldTopAnchor: NSLayoutConstraint?
+    
+    
+    var passwordOnPosition : CGFloat = 400
+    var passwordOffPosition : CGFloat = 370
+    var passwordTextFieldTopAnchor : NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +58,9 @@ class ViewController: UIViewController {
         passwordFieldSetup()
         underlinesSetup()
         eyeButtonSetup()
+        
+//        loginTextField.backgroundColor = .red
+//        passwordTextField.backgroundColor = .red
         
         view.backgroundColor = UIColor(named: "Tarmac")
         
@@ -93,20 +110,19 @@ class ViewController: UIViewController {
 
 extension ViewController{
     private func loginHeaderSetup(){
-        view.addSubview(loginLabel)
-        loginLabel.text = "LOGIN"
-        loginLabel.textColor = UIColor(named: "Chalk")
+        view.addSubview(headerLabel)
+        headerLabel.text = "LOGIN"
+        headerLabel.textColor = UIColor(named: "Chalk")
         
         
-        loginLabel.translatesAutoresizingMaskIntoConstraints = false
-        loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 56).isActive = true
-        loginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 166).isActive = true
-        loginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -166).isActive = true
-        loginLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        
-        
-        
+
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 56).isActive = true
+        headerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 166).isActive = true
+        headerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -166).isActive = true
+        headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+
     }
     
     
@@ -115,6 +131,7 @@ extension ViewController{
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.backgroundColor = UIColor(named: "Neon")
         loginButton.setTitleColor(UIColor(named: "Concrete"), for: .normal)
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
@@ -125,20 +142,38 @@ extension ViewController{
     
     private func loginFieldSetup(){
         view.addSubview(loginTextField)
+        view.addSubview(loginLabel)
+        
+       
+        
+        loginLabel.text = "E-mail address"
+        loginLabel.textColor = UIColor(named: "Chalk")
+        
+        
+        loginLabel.translatesAutoresizingMaskIntoConstraints = false
+        loginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
+        loginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
+        loginLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -489).isActive = true
+        
+        // animation
+        loginTextFieldTopAnchor = loginLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: loginOnPosition)
+        loginTextFieldTopAnchor?.isActive = true
+        //
+        
+        
         
         loginTextField.backgroundColor = .clear
         loginTextField.textColor = UIColor(named: "Chalk")
-        loginTextField.attributedPlaceholder = NSAttributedString(
-            string: "E-mail address",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Chalk")!]
-        )
+     
+        
         
         loginTextField.translatesAutoresizingMaskIntoConstraints = false
         loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
         loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
-        //loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: textFieldOnPosition).isActive = true
+        loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: loginOnPosition).isActive = true
         loginTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -489).isActive = true
         
+
         loginTextFieldTopAnchor = loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: textFieldOnPosition)
         loginTextFieldTopAnchor?.isActive = true
         
@@ -151,24 +186,39 @@ extension ViewController{
         incorrectLoginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
         incorrectLoginLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -450).isActive = true
         
-        
+
     }
     
     
     private func passwordFieldSetup(){
         view.addSubview(passwordTextField)
+        view.addSubview(passwordLabel)
+        
+        passwordLabel.text = "Password"
+        passwordLabel.textColor = UIColor(named: "Chalk")
+       
+        
+        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
+        passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
+        passwordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
+        passwordLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -388).isActive = true
+        
+        // animation
+        
+        passwordTextFieldTopAnchor = passwordLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: passwordOnPosition)
+        passwordTextFieldTopAnchor?.isActive = true
+        
+        //
+        
+       
         
         passwordTextField.backgroundColor = .clear
         passwordTextField.textColor = UIColor(named: "Chalk")
-        passwordTextField.attributedPlaceholder = NSAttributedString(
-            string: "Password",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Chalk")!]
-        )
-        
+       
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
         passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 400).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: passwordOnPosition).isActive = true
         passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -388).isActive = true
         
         
@@ -221,20 +271,70 @@ extension ViewController{
     }
     
     @objc func buttonTapped(){
-            animateTextField()
-//        passwordTextField.isSecureTextEntry.toggle()
-//        self.showPassword.toggle()
-//        print(showPassword)
+        startTypingLogin()
+        startTypingPassword()
+        passwordTextField.isSecureTextEntry.toggle()
     }
     
+    @objc func loginTapped(){
+        finishTypingLogin()
+        finishTypingPassword()
+    }
+}
     
-    func animateTextField(){
-        let animator = UIViewPropertyAnimator(duration: 0.15, curve: .easeInOut){
-            self.loginTextFieldTopAnchor?.constant = self.textFIeldOffPosition
+ 
+
+
+// MARK:  - Animations
+
+extension ViewController{
+    
+    func startTypingLogin(){
+        let animation = UIViewPropertyAnimator(duration: 0.15, curve: .easeInOut){
+            self.loginTextFieldTopAnchor?.constant = self.loginOffPosition
+            self.loginLabel.font = UIFont.boldSystemFont(ofSize: 13)
+            self.loginLabel.textColor = UIColor(named: "Concrete")
             self.view.layoutIfNeeded()
         }
-        animator.startAnimation()
+        animation.startAnimation()
     }
+    
+    func finishTypingLogin(){
+        let animation = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut){
+            self.loginTextFieldTopAnchor?.constant = self.loginOnPosition
+            self.loginLabel.font = UIFont.systemFont(ofSize: 17)
+            self.loginLabel.textColor = UIColor(named: "Chalk")
+            self.view.layoutIfNeeded()
+        }
+        animation.startAnimation()
+    }
+    
+    
+    func startTypingPassword(){
+        let animation = UIViewPropertyAnimator(duration: 0.15, curve: .easeInOut){
+            self.passwordTextFieldTopAnchor?.constant = self.passwordOffPosition
+            self.passwordLabel.font = UIFont.boldSystemFont(ofSize: 13)
+            self.passwordLabel.textColor = UIColor(named: "Concrete")
+            self.view.layoutIfNeeded()
+        }
+        animation.startAnimation()
+        
+    }
+        
+    
+    
+    func finishTypingPassword(){
+        let animation = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut){
+            self.passwordTextFieldTopAnchor?.constant = self.passwordOnPosition
+            self.passwordLabel.font = UIFont.systemFont(ofSize: 17)
+            self.passwordLabel.textColor = UIColor(named: "Chalk")
+            self.view.layoutIfNeeded()
+        }
+        animation.startAnimation()
+    }
+    
+    
+
 
     @IBDesignable
     class LoginViewModel: UIControl {
@@ -289,6 +389,7 @@ extension ViewController{
         
         
     }
+
 }
 
 extension String {
