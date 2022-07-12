@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EE2CF4ADEF155B0B62B0E72 /* Pods_DAZN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9E3E9C1B5FC73A42BAE1AE /* Pods_DAZN.framework */; };
 		853A9E29287D9489007B4F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E28287D9489007B4F41 /* AppDelegate.swift */; };
 		853A9E2B287D9489007B4F41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E2A287D9489007B4F41 /* SceneDelegate.swift */; };
 		853A9E2D287D9489007B4F41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E2C287D9489007B4F41 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48F81484D77CE6BF8CA93AB3 /* Pods-DAZN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAZN.release.xcconfig"; path = "Target Support Files/Pods-DAZN/Pods-DAZN.release.xcconfig"; sourceTree = "<group>"; };
 		853A9E25287D9489007B4F41 /* DAZN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAZN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		853A9E28287D9489007B4F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		853A9E2A287D9489007B4F41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		853A9E31287D948B007B4F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853A9E34287D948B007B4F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		853A9E36287D948B007B4F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9E3E9C1B5FC73A42BAE1AE /* Pods_DAZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DAZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E68027F877B90727E3ED6EAB /* Pods-DAZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAZN.debug.xcconfig"; path = "Target Support Files/Pods-DAZN/Pods-DAZN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EE2CF4ADEF155B0B62B0E72 /* Pods_DAZN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				853A9E27287D9489007B4F41 /* DAZN */,
 				853A9E26287D9489007B4F41 /* Products */,
+				AAB5DA93712E72B1B376F6B1 /* Pods */,
+				9C57A6285D0807786B8A3A6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = DAZN;
 			sourceTree = "<group>";
 		};
+		9C57A6285D0807786B8A3A6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB9E3E9C1B5FC73A42BAE1AE /* Pods_DAZN.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAB5DA93712E72B1B376F6B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E68027F877B90727E3ED6EAB /* Pods-DAZN.debug.xcconfig */,
+				48F81484D77CE6BF8CA93AB3 /* Pods-DAZN.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 853A9E39287D948B007B4F41 /* Build configuration list for PBXNativeTarget "DAZN" */;
 			buildPhases = (
+				ABE5BD1C5BA46F496D1BCF7C /* [CP] Check Pods Manifest.lock */,
 				853A9E21287D9489007B4F41 /* Sources */,
 				853A9E22287D9489007B4F41 /* Frameworks */,
 				853A9E23287D9489007B4F41 /* Resources */,
+				8736E0351E1AE6FF94DCC37D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8736E0351E1AE6FF94DCC37D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DAZN/Pods-DAZN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DAZN/Pods-DAZN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DAZN/Pods-DAZN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABE5BD1C5BA46F496D1BCF7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DAZN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		853A9E21287D9489007B4F41 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		853A9E3A287D948B007B4F41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E68027F877B90727E3ED6EAB /* Pods-DAZN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +379,7 @@
 		};
 		853A9E3B287D948B007B4F41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F81484D77CE6BF8CA93AB3 /* Pods-DAZN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
