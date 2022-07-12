@@ -73,12 +73,17 @@ class ViewController: UIViewController {
         
        
          
-        // TO ZROBIC JAK BEDA CZERWONE PRZYPOMINACZE O ZLYM HASLE I ZLYM LOGINIE!!
+      
          
         //Setting the "INCORRECT EMAIL" and "INCORRECT PASSWORD" Red Labels Invisible and visible depending on the "isEmailValid" and "isPasswordValid"
         loginViewModel.isEmailValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectLoginLabel.rx.alpha).disposed(by: disposeBag)
         loginViewModel.isPasswordValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectPasswordLabel.rx.alpha).disposed(by: disposeBag)
-    
+    //
+        let redColor = UIColor(named: "GlovesLight")
+        let defaultColor = UIColor(named: "Chalk")
+        
+        loginViewModel.isEmailValid().map {$0 ? redColor : defaultColor }.bind(to: loginFieldLine.rx.backgroundColor).disposed(by: disposeBag)
+        loginViewModel.isPasswordValid().map {$0 ? redColor : defaultColor }.bind(to: passwordFieldLine.rx.backgroundColor).disposed(by: disposeBag)
         
     }
        
@@ -140,7 +145,7 @@ extension ViewController{
         
         view.addSubview(incorrectLoginLabel)
         incorrectLoginLabel.text = "Incorrect Email"
-        incorrectLoginLabel.textColor = UIColor(named: "Neon")
+        incorrectLoginLabel.textColor = UIColor(named: "GlovesLight")
         incorrectLoginLabel.translatesAutoresizingMaskIntoConstraints = false
         incorrectLoginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
         incorrectLoginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
@@ -169,7 +174,7 @@ extension ViewController{
         
         view.addSubview(incorrectPasswordLabel)
         incorrectPasswordLabel.text = "Incorrect Password"
-        incorrectPasswordLabel.textColor = UIColor(named: "Neon")
+        incorrectPasswordLabel.textColor = UIColor(named: "GlovesLight")
         incorrectPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
         incorrectPasswordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
         incorrectPasswordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
