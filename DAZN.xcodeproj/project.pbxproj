@@ -14,6 +14,8 @@
 		853A9E30287D9489007B4F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E2E287D9489007B4F41 /* Main.storyboard */; };
 		853A9E32287D948B007B4F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E31287D948B007B4F41 /* Assets.xcassets */; };
 		853A9E35287D948B007B4F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E33287D948B007B4F41 /* LaunchScreen.storyboard */; };
+		853A9E3D287E9DBD007B4F41 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E3C287E9DBD007B4F41 /* Colors.swift */; };
+		853A9E3F287EA42C007B4F41 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E3E287EA42C007B4F41 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		853A9E31287D948B007B4F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853A9E34287D948B007B4F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		853A9E36287D948B007B4F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		853A9E3C287E9DBD007B4F41 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		853A9E3E287EA42C007B4F41 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DB9E3E9C1B5FC73A42BAE1AE /* Pods_DAZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DAZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68027F877B90727E3ED6EAB /* Pods-DAZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAZN.debug.xcconfig"; path = "Target Support Files/Pods-DAZN/Pods-DAZN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +74,8 @@
 				853A9E31287D948B007B4F41 /* Assets.xcassets */,
 				853A9E33287D948B007B4F41 /* LaunchScreen.storyboard */,
 				853A9E36287D948B007B4F41 /* Info.plist */,
+				853A9E3C287E9DBD007B4F41 /* Colors.swift */,
+				853A9E3E287EA42C007B4F41 /* LoginViewModel.swift */,
 			);
 			path = DAZN;
 			sourceTree = "<group>";
@@ -207,7 +213,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				853A9E2D287D9489007B4F41 /* ViewController.swift in Sources */,
+				853A9E3D287E9DBD007B4F41 /* Colors.swift in Sources */,
 				853A9E29287D9489007B4F41 /* AppDelegate.swift in Sources */,
+				853A9E3F287EA42C007B4F41 /* LoginViewModel.swift in Sources */,
 				853A9E2B287D9489007B4F41 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

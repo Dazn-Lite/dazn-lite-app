@@ -21,17 +21,11 @@ class ViewController: UIViewController {
     let loginTextField = UITextField()
     let loginLabel = UILabel()
     let loginFieldLine = UIView()
-    
     let passwordTextField = UITextField()
     let passwordLabel = UILabel()
     let passwordFieldLine = UIView()
-    
-    
     let eyeButton = UIButton()
-    
-    
     let loginButton = UIButton()
-    
     let incorrectLoginLabel = UILabel()
     let incorrectPasswordLabel = UILabel()
     
@@ -43,7 +37,6 @@ class ViewController: UIViewController {
     var loginOnPosition : CGFloat = 299
     var loginOffPosition : CGFloat = 269
     var loginTextFieldTopAnchor: NSLayoutConstraint?
-    
     
     var passwordOnPosition : CGFloat = 400
     var passwordOffPosition : CGFloat = 370
@@ -58,61 +51,21 @@ class ViewController: UIViewController {
         passwordFieldSetup()
         underlinesSetup()
         eyeButtonSetup()
+        setupRx()
         
-//        loginTextField.backgroundColor = .red
-//        passwordTextField.backgroundColor = .red
-        
-        view.backgroundColor = UIColor(named: "Tarmac")
-        
-    
-        loginTextField.becomeFirstResponder()
-        
-        //Starting the Reactive publishing for both the Email and Password fields. Connecting them with "loginViewModel" so they can be published as events there.
-        loginTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.usernameTextPublishSubject).disposed(by: disposeBag)
-        passwordTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.passwordTextPublishSubject).disposed(by: disposeBag)
-        
-        
-        //Uncovering the login button when BOTH EMAIL and PASSWORD are valid.
-        loginViewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
-        loginViewModel.isValid().map { $0 ? 1 : 0.2}.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
-        
-        
-        //Setting the one time bool value to true when user stops editing the Email or Password for the first time.
-        //Thanks to that, user isn't notified abour wrong password at the moment of beggining of filling the form.
-        loginTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe(onNext:{ boolValEmail = true})
-        passwordTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe(onNext:{ boolValPassword = true})
-        
-        loginTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValEmail = false})
-        passwordTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValPassword = false})
-        
-        loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValEmail = true})
-        passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValPassword = true})
-        
-       
-         
-      
-         
-        //Setting the "INCORRECT EMAIL" and "INCORRECT PASSWORD" Red Labels Invisible and visible depending on the "isEmailValid" and "isPasswordValid"
-        loginViewModel.isEmailValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectLoginLabel.rx.alpha).disposed(by: disposeBag)
-        loginViewModel.isPasswordValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectPasswordLabel.rx.alpha).disposed(by: disposeBag)
-    //
-        let redColor = UIColor(named: "GlovesLight")
-        let defaultColor = UIColor(named: "Chalk")
-        
-        loginViewModel.isEmailValid().map {$0 ? redColor : defaultColor }.bind(to: loginFieldLine.rx.backgroundColor).disposed(by: disposeBag)
-        loginViewModel.isPasswordValid().map {$0 ? redColor : defaultColor }.bind(to: passwordFieldLine.rx.backgroundColor).disposed(by: disposeBag)
-        
+        view.backgroundColor = Color.Tarmac.getColor
     }
        
 }
 
 
+// MARK: Layout & Style
 
 extension ViewController{
     private func loginHeaderSetup(){
         view.addSubview(headerLabel)
         headerLabel.text = "LOGIN"
-        headerLabel.textColor = UIColor(named: "Chalk")
+        headerLabel.textColor = Color.Chalk.getColor
         
         
 
@@ -129,8 +82,9 @@ extension ViewController{
     private func buttonSetup(){
         view.addSubview(loginButton)
         loginButton.setTitle("LOGIN", for: .normal)
-        loginButton.backgroundColor = UIColor(named: "Neon")
-        loginButton.setTitleColor(UIColor(named: "Concrete"), for: .normal)
+        loginButton.backgroundColor = Color.Neon.getColor
+        loginButton.setTitleColor(Color.Concrete.getColor, for: .normal)
+        loginButton.setTitleColor(Color.Iron.getColor, for: .disabled)
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
         loginButton.translatesAutoresizingMaskIntoConstraints = false
@@ -147,7 +101,7 @@ extension ViewController{
        
         
         loginLabel.text = "E-mail address"
-        loginLabel.textColor = UIColor(named: "Chalk")
+        loginLabel.textColor = Color.Chalk.getColor
         
         
         loginLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -163,7 +117,7 @@ extension ViewController{
         
         
         loginTextField.backgroundColor = .clear
-        loginTextField.textColor = UIColor(named: "Chalk")
+        loginTextField.textColor = Color.Chalk.getColor
      
         
         
@@ -174,13 +128,13 @@ extension ViewController{
         loginTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -489).isActive = true
         
 
-        loginTextFieldTopAnchor = loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: textFieldOnPosition)
-        loginTextFieldTopAnchor?.isActive = true
+//        loginTextFieldTopAnchor = loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: loginOnPosition)
+//        loginTextFieldTopAnchor?.isActive = true
         
         
         view.addSubview(incorrectLoginLabel)
         incorrectLoginLabel.text = "Incorrect Email"
-        incorrectLoginLabel.textColor = UIColor(named: "GlovesLight")
+        incorrectLoginLabel.textColor = Color.GlovesLight.getColor
         incorrectLoginLabel.translatesAutoresizingMaskIntoConstraints = false
         incorrectLoginLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
         incorrectLoginLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
@@ -195,12 +149,12 @@ extension ViewController{
         view.addSubview(passwordLabel)
         
         passwordLabel.text = "Password"
-        passwordLabel.textColor = UIColor(named: "Chalk")
+        passwordLabel.textColor = Color.Chalk.getColor
        
         
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
-        passwordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
+        passwordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -180).isActive = true
         passwordLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -388).isActive = true
         
         // animation
@@ -210,21 +164,19 @@ extension ViewController{
         
         //
         
-       
-        
         passwordTextField.backgroundColor = .clear
-        passwordTextField.textColor = UIColor(named: "Chalk")
+        passwordTextField.textColor = Color.Chalk.getColor
        
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
-        passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220).isActive = true
+        passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -180).isActive = true
         passwordTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: passwordOnPosition).isActive = true
         passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -388).isActive = true
         
         
         view.addSubview(incorrectPasswordLabel)
         incorrectPasswordLabel.text = "Incorrect Password"
-        incorrectPasswordLabel.textColor = UIColor(named: "GlovesLight")
+        incorrectPasswordLabel.textColor = Color.GlovesLight.getColor
         incorrectPasswordLabel.translatesAutoresizingMaskIntoConstraints = false
         incorrectPasswordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
         incorrectPasswordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
@@ -236,8 +188,8 @@ extension ViewController{
     private func underlinesSetup(){
         view.addSubview(loginFieldLine)
         view.addSubview(passwordFieldLine)
-        loginFieldLine.backgroundColor = UIColor(named: "Chalk")
-        passwordFieldLine.backgroundColor = UIColor(named: "Chalk")
+        loginFieldLine.backgroundColor = Color.Chalk.getColor
+        passwordFieldLine.backgroundColor = Color.Chalk.getColor
         
         loginFieldLine.translatesAutoresizingMaskIntoConstraints = false
         loginFieldLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
@@ -257,11 +209,10 @@ extension ViewController{
         
         eyeButton.setTitle("", for: .normal)
         eyeButton.setImage(UIImage(systemName:"eye"), for: .normal)
-        eyeButton.tintColor = UIColor(named: "Chalk")
+        eyeButton.tintColor = Color.Chalk.getColor
         eyeButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
-        
-        
+    
         eyeButton.translatesAutoresizingMaskIntoConstraints = false
         eyeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 329).isActive = true
         eyeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26).isActive = true
@@ -293,7 +244,7 @@ extension ViewController{
         let animation = UIViewPropertyAnimator(duration: 0.15, curve: .easeInOut){
             self.loginTextFieldTopAnchor?.constant = self.loginOffPosition
             self.loginLabel.font = UIFont.boldSystemFont(ofSize: 13)
-            self.loginLabel.textColor = UIColor(named: "Concrete")
+            self.loginLabel.textColor = Color.Concrete.getColor
             self.view.layoutIfNeeded()
         }
         animation.startAnimation()
@@ -303,7 +254,7 @@ extension ViewController{
         let animation = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut){
             self.loginTextFieldTopAnchor?.constant = self.loginOnPosition
             self.loginLabel.font = UIFont.systemFont(ofSize: 17)
-            self.loginLabel.textColor = UIColor(named: "Chalk")
+            self.loginLabel.textColor = Color.Chalk.getColor
             self.view.layoutIfNeeded()
         }
         animation.startAnimation()
@@ -314,94 +265,61 @@ extension ViewController{
         let animation = UIViewPropertyAnimator(duration: 0.15, curve: .easeInOut){
             self.passwordTextFieldTopAnchor?.constant = self.passwordOffPosition
             self.passwordLabel.font = UIFont.boldSystemFont(ofSize: 13)
-            self.passwordLabel.textColor = UIColor(named: "Concrete")
+            self.passwordLabel.textColor = Color.Concrete.getColor
             self.view.layoutIfNeeded()
         }
         animation.startAnimation()
-        
     }
         
-    
-    
     func finishTypingPassword(){
         let animation = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut){
             self.passwordTextFieldTopAnchor?.constant = self.passwordOnPosition
             self.passwordLabel.font = UIFont.systemFont(ofSize: 17)
-            self.passwordLabel.textColor = UIColor(named: "Chalk")
+            self.passwordLabel.textColor = Color.Chalk.getColor
             self.view.layoutIfNeeded()
         }
         animation.startAnimation()
     }
-    
-    
+}
+// MARK: RX
 
-
-    @IBDesignable
-    class LoginViewModel: UIControl {
+extension ViewController{
+    func setupRx(){
         
-        
-        
-        let usernameTextPublishSubject = PublishSubject<String>()
-        let passwordTextPublishSubject = PublishSubject<String>()
-        
-        
-        // isValid checks if BOTH email and password are correct
-        
-        func isValid() -> Observable<Bool> {
-           return Observable.combineLatest(usernameTextPublishSubject.asObservable().startWith(""), passwordTextPublishSubject.asObservable().startWith("")).map {
-                username , password in
-               return username.isValidEmail && password.isValidPassword
-            }.startWith(false)
-        }
+            loginTextField.becomeFirstResponder()
+            
+            //Starting the Reactive publishing for both the Email and Password fields. Connecting them with "loginViewModel" so they can be published as events there.
+            loginTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.usernameTextPublishSubject).disposed(by: disposeBag)
+            passwordTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.passwordTextPublishSubject).disposed(by: disposeBag)
+            
+            //Uncovering the login button when BOTH EMAIL and PASSWORD are valid.
+            loginViewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
+            loginViewModel.isValid().map {$0 ? Color.Neon.getColor : Color.Mako.getColor }.bind(to: loginButton.rx.backgroundColor).disposed(by: disposeBag)
+            
+            //Setting the one time bool value to true when user stops editing the Email or Password for the first time.
+            //Thanks to that, user isn't notified abour wrong password at the moment of beggining of filling the form.
+            loginTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe(onNext:{ boolValEmail = true})
+            passwordTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe(onNext:{ boolValPassword = true})
+            
+            loginTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValEmail = false})
+            passwordTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValPassword = false})
+            
+            loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValEmail = true})
+            passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValPassword = true})
+            
+           
+             
+          
+             
+            //Setting the "INCORRECT EMAIL" and "INCORRECT PASSWORD" Red Labels Invisible and visible depending on the "isEmailValid" and "isPasswordValid"
+            loginViewModel.isEmailValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectLoginLabel.rx.alpha).disposed(by: disposeBag)
+            loginViewModel.isPasswordValid().map {$0 ? 1 : 0.01 }.bind(to: incorrectPasswordLabel.rx.alpha).disposed(by: disposeBag)
+        //
          
-        //isEmailValid checks if email is valid
-        
-        func isEmailValid() -> Observable<Bool> {
             
-            return Observable.combineLatest(usernameTextPublishSubject.asObservable().startWith(""), passwordTextPublishSubject.asObservable().startWith("")).map {
-                username , password in
-               return !username.isValidEmail && boolValEmail == true
-            }.startWith(false)
-            
-            
-        }
-        
-        
-        //checks if password is valid
-        
-        func isPasswordValid() -> Observable<Bool> {
-            
-           return Observable.combineLatest(usernameTextPublishSubject.asObservable().startWith(""), passwordTextPublishSubject.asObservable().startWith("")).map {
-                username , password in
-               return !password.isValidPassword && boolValPassword == true
-            }.startWith(false)
-        }
-        
-    // INITIALIZATION
-        var email = ""
-        var password = ""
-        
-        convenience init(email : String, password : String) {
-            self.init()
-            self.email = email
-            self.password = password
-        }
-        
-        
-    }
-
-}
-
-extension String {
-    var isValidEmail: Bool {
-        
-        
-        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,}").evaluate(with: self)
-      
-        
-      
-    }
-    var isValidPassword: Bool {
-      NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[0-9])(.*[A-Z0-9a-z._%+-]).{5,}$").evaluate(with: self)
+            loginViewModel.isEmailValid().map {$0 ? Color.GlovesLight.getColor : Color.Chalk.getColor }.bind(to: loginFieldLine.rx.backgroundColor).disposed(by: disposeBag)
+            loginViewModel.isPasswordValid().map {$0 ? Color.GlovesLight.getColor : Color.Chalk.getColor }.bind(to: passwordFieldLine.rx.backgroundColor).disposed(by: disposeBag)
     }
 }
+    
+    
