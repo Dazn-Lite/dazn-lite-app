@@ -11,7 +11,7 @@ import UIKit
 
 enum Color{
     
-    case Aslphalt
+    case Asphalt
     case Chalk
     case Concrete
     case Ebony
@@ -24,7 +24,7 @@ enum Color{
     
     var getColor : UIColor {
         switch self {
-        case .Aslphalt: return UIColor(named: "Aslphalt")!
+        case .Asphalt: return UIColor(named: "Asphalt")!
         case .Chalk: return UIColor(named: "Chalk")!
         case .Concrete: return UIColor(named: "Concrete")!
         case .Ebony: return UIColor(named: "Ebony")!

@@ -2,6 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DAZNTrim-Bold.ttf</string>
+		<string>DAZNTrim-BoldItalic.ttf</string>
+		<string>DAZNTrim-ExtraBoldItalic.ttf</string>
+		<string>DAZNTrim-ExtraBold.ttf</string>
+		<string>DAZNTrimCondensedText-Regular.ttf</string>
+		<string>DAZNTrim-Light.ttf</string>
+		<string>DAZNTrim-Italic.ttf</string>
+		<string>DAZNTrim-LightItalic.ttf</string>
+		<string>DAZNTrim-Medium.ttf</string>
+		<string>DAZNTrim-MediumItalic.ttf</string>
+		<string>DAZNTrim-Regular.ttf</string>
+		<string>DAZNTrim-SemiBold.ttf</string>
+		<string>DAZNTrim-SemiBoldItalic.ttf</string>
+		<string>DAZN_Oscine_A_Bd.ttf</string>
+		<string>DAZN_Oscine_A_BdIt.ttf</string>
+		<string>DAZN_Oscine_A_It.ttf</string>
+		<string>DAZN_Oscine_A_Lt.ttf</string>
+		<string>DAZN_Oscine_A_LtIt.ttf</string>
+		<string>DAZN_Oscine_A_Rg.ttf</string>
+		<string>DAZN_Oscine_A_XBd.ttf</string>
+		<string>DAZN_Oscine_A_XBdIt.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

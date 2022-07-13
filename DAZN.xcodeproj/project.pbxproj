@@ -16,6 +16,28 @@
 		853A9E35287D948B007B4F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E33287D948B007B4F41 /* LaunchScreen.storyboard */; };
 		853A9E3D287E9DBD007B4F41 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E3C287E9DBD007B4F41 /* Colors.swift */; };
 		853A9E3F287EA42C007B4F41 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E3E287EA42C007B4F41 /* LoginViewModel.swift */; };
+		853A9E54287ED821007B4F41 /* DAZNTrim-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E48287ED820007B4F41 /* DAZNTrim-ExtraBold.ttf */; };
+		853A9E55287ED821007B4F41 /* DAZNTrim-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E49287ED820007B4F41 /* DAZNTrim-LightItalic.ttf */; };
+		853A9E56287ED821007B4F41 /* DAZNTrim-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E4A287ED820007B4F41 /* DAZNTrim-ExtraBoldItalic.ttf */; };
+		853A9E57287ED821007B4F41 /* DAZNTrim-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E4B287ED820007B4F41 /* DAZNTrim-Medium.ttf */; };
+		853A9E58287ED821007B4F41 /* DAZNTrim-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E4C287ED821007B4F41 /* DAZNTrim-Bold.ttf */; };
+		853A9E59287ED821007B4F41 /* DAZNTrim-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E4D287ED821007B4F41 /* DAZNTrim-Regular.ttf */; };
+		853A9E5A287ED821007B4F41 /* DAZNTrim-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E4E287ED821007B4F41 /* DAZNTrim-SemiBoldItalic.ttf */; };
+		853A9E5B287ED821007B4F41 /* DAZNTrim-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E4F287ED821007B4F41 /* DAZNTrim-Light.ttf */; };
+		853A9E5C287ED821007B4F41 /* DAZNTrim-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E50287ED821007B4F41 /* DAZNTrim-Italic.ttf */; };
+		853A9E5D287ED821007B4F41 /* DAZNTrim-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E51287ED821007B4F41 /* DAZNTrim-BoldItalic.ttf */; };
+		853A9E5E287ED821007B4F41 /* DAZNTrim-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E52287ED821007B4F41 /* DAZNTrim-MediumItalic.ttf */; };
+		853A9E5F287ED821007B4F41 /* DAZNTrim-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E53287ED821007B4F41 /* DAZNTrim-SemiBold.ttf */; };
+		853A9E62287ED910007B4F41 /* DAZNTrimCondensedText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E61287ED910007B4F41 /* DAZNTrimCondensedText-Regular.ttf */; };
+		853A9E6B287ED94B007B4F41 /* DAZN_Oscine_A_It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E63287ED94A007B4F41 /* DAZN_Oscine_A_It.ttf */; };
+		853A9E6C287ED94B007B4F41 /* DAZN_Oscine_A_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E64287ED94A007B4F41 /* DAZN_Oscine_A_Bd.ttf */; };
+		853A9E6D287ED94B007B4F41 /* DAZN_Oscine_A_Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E65287ED94A007B4F41 /* DAZN_Oscine_A_Rg.ttf */; };
+		853A9E6E287ED94B007B4F41 /* DAZN_Oscine_A_BdIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E66287ED94A007B4F41 /* DAZN_Oscine_A_BdIt.ttf */; };
+		853A9E6F287ED94B007B4F41 /* DAZN_Oscine_A_LtIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E67287ED94A007B4F41 /* DAZN_Oscine_A_LtIt.ttf */; };
+		853A9E70287ED94B007B4F41 /* DAZN_Oscine_A_XBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E68287ED94B007B4F41 /* DAZN_Oscine_A_XBd.ttf */; };
+		853A9E71287ED94B007B4F41 /* DAZN_Oscine_A_XBdIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E69287ED94B007B4F41 /* DAZN_Oscine_A_XBdIt.ttf */; };
+		853A9E72287ED94B007B4F41 /* DAZN_Oscine_A_Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 853A9E6A287ED94B007B4F41 /* DAZN_Oscine_A_Lt.ttf */; };
+		853A9E74287F1822007B4F41 /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853A9E73287F1822007B4F41 /* VCExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +52,28 @@
 		853A9E36287D948B007B4F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853A9E3C287E9DBD007B4F41 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		853A9E3E287EA42C007B4F41 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		853A9E48287ED820007B4F41 /* DAZNTrim-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-ExtraBold.ttf"; sourceTree = "<group>"; };
+		853A9E49287ED820007B4F41 /* DAZNTrim-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-LightItalic.ttf"; sourceTree = "<group>"; };
+		853A9E4A287ED820007B4F41 /* DAZNTrim-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		853A9E4B287ED820007B4F41 /* DAZNTrim-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-Medium.ttf"; sourceTree = "<group>"; };
+		853A9E4C287ED821007B4F41 /* DAZNTrim-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-Bold.ttf"; sourceTree = "<group>"; };
+		853A9E4D287ED821007B4F41 /* DAZNTrim-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-Regular.ttf"; sourceTree = "<group>"; };
+		853A9E4E287ED821007B4F41 /* DAZNTrim-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		853A9E4F287ED821007B4F41 /* DAZNTrim-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-Light.ttf"; sourceTree = "<group>"; };
+		853A9E50287ED821007B4F41 /* DAZNTrim-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-Italic.ttf"; sourceTree = "<group>"; };
+		853A9E51287ED821007B4F41 /* DAZNTrim-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-BoldItalic.ttf"; sourceTree = "<group>"; };
+		853A9E52287ED821007B4F41 /* DAZNTrim-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-MediumItalic.ttf"; sourceTree = "<group>"; };
+		853A9E53287ED821007B4F41 /* DAZNTrim-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrim-SemiBold.ttf"; sourceTree = "<group>"; };
+		853A9E61287ED910007B4F41 /* DAZNTrimCondensedText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DAZNTrimCondensedText-Regular.ttf"; sourceTree = "<group>"; };
+		853A9E63287ED94A007B4F41 /* DAZN_Oscine_A_It.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_It.ttf; sourceTree = "<group>"; };
+		853A9E64287ED94A007B4F41 /* DAZN_Oscine_A_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_Bd.ttf; sourceTree = "<group>"; };
+		853A9E65287ED94A007B4F41 /* DAZN_Oscine_A_Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_Rg.ttf; sourceTree = "<group>"; };
+		853A9E66287ED94A007B4F41 /* DAZN_Oscine_A_BdIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_BdIt.ttf; sourceTree = "<group>"; };
+		853A9E67287ED94A007B4F41 /* DAZN_Oscine_A_LtIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_LtIt.ttf; sourceTree = "<group>"; };
+		853A9E68287ED94B007B4F41 /* DAZN_Oscine_A_XBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_XBd.ttf; sourceTree = "<group>"; };
+		853A9E69287ED94B007B4F41 /* DAZN_Oscine_A_XBdIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_XBdIt.ttf; sourceTree = "<group>"; };
+		853A9E6A287ED94B007B4F41 /* DAZN_Oscine_A_Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DAZN_Oscine_A_Lt.ttf; sourceTree = "<group>"; };
+		853A9E73287F1822007B4F41 /* VCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		DB9E3E9C1B5FC73A42BAE1AE /* Pods_DAZN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DAZN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68027F877B90727E3ED6EAB /* Pods-DAZN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAZN.debug.xcconfig"; path = "Target Support Files/Pods-DAZN/Pods-DAZN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,8 +120,38 @@
 				853A9E36287D948B007B4F41 /* Info.plist */,
 				853A9E3C287E9DBD007B4F41 /* Colors.swift */,
 				853A9E3E287EA42C007B4F41 /* LoginViewModel.swift */,
+				853A9E60287ED82D007B4F41 /* Fonts */,
+				853A9E73287F1822007B4F41 /* VCExtensions.swift */,
 			);
 			path = DAZN;
+			sourceTree = "<group>";
+		};
+		853A9E60287ED82D007B4F41 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				853A9E4C287ED821007B4F41 /* DAZNTrim-Bold.ttf */,
+				853A9E51287ED821007B4F41 /* DAZNTrim-BoldItalic.ttf */,
+				853A9E61287ED910007B4F41 /* DAZNTrimCondensedText-Regular.ttf */,
+				853A9E48287ED820007B4F41 /* DAZNTrim-ExtraBold.ttf */,
+				853A9E4A287ED820007B4F41 /* DAZNTrim-ExtraBoldItalic.ttf */,
+				853A9E50287ED821007B4F41 /* DAZNTrim-Italic.ttf */,
+				853A9E4F287ED821007B4F41 /* DAZNTrim-Light.ttf */,
+				853A9E49287ED820007B4F41 /* DAZNTrim-LightItalic.ttf */,
+				853A9E4B287ED820007B4F41 /* DAZNTrim-Medium.ttf */,
+				853A9E52287ED821007B4F41 /* DAZNTrim-MediumItalic.ttf */,
+				853A9E4D287ED821007B4F41 /* DAZNTrim-Regular.ttf */,
+				853A9E53287ED821007B4F41 /* DAZNTrim-SemiBold.ttf */,
+				853A9E4E287ED821007B4F41 /* DAZNTrim-SemiBoldItalic.ttf */,
+				853A9E64287ED94A007B4F41 /* DAZN_Oscine_A_Bd.ttf */,
+				853A9E66287ED94A007B4F41 /* DAZN_Oscine_A_BdIt.ttf */,
+				853A9E63287ED94A007B4F41 /* DAZN_Oscine_A_It.ttf */,
+				853A9E6A287ED94B007B4F41 /* DAZN_Oscine_A_Lt.ttf */,
+				853A9E67287ED94A007B4F41 /* DAZN_Oscine_A_LtIt.ttf */,
+				853A9E65287ED94A007B4F41 /* DAZN_Oscine_A_Rg.ttf */,
+				853A9E68287ED94B007B4F41 /* DAZN_Oscine_A_XBd.ttf */,
+				853A9E69287ED94B007B4F41 /* DAZN_Oscine_A_XBdIt.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9C57A6285D0807786B8A3A6B /* Frameworks */ = {
@@ -157,9 +231,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853A9E5B287ED821007B4F41 /* DAZNTrim-Light.ttf in Resources */,
+				853A9E71287ED94B007B4F41 /* DAZN_Oscine_A_XBdIt.ttf in Resources */,
+				853A9E6F287ED94B007B4F41 /* DAZN_Oscine_A_LtIt.ttf in Resources */,
+				853A9E57287ED821007B4F41 /* DAZNTrim-Medium.ttf in Resources */,
+				853A9E6B287ED94B007B4F41 /* DAZN_Oscine_A_It.ttf in Resources */,
 				853A9E35287D948B007B4F41 /* LaunchScreen.storyboard in Resources */,
+				853A9E54287ED821007B4F41 /* DAZNTrim-ExtraBold.ttf in Resources */,
+				853A9E5F287ED821007B4F41 /* DAZNTrim-SemiBold.ttf in Resources */,
 				853A9E32287D948B007B4F41 /* Assets.xcassets in Resources */,
+				853A9E58287ED821007B4F41 /* DAZNTrim-Bold.ttf in Resources */,
+				853A9E62287ED910007B4F41 /* DAZNTrimCondensedText-Regular.ttf in Resources */,
+				853A9E6E287ED94B007B4F41 /* DAZN_Oscine_A_BdIt.ttf in Resources */,
+				853A9E72287ED94B007B4F41 /* DAZN_Oscine_A_Lt.ttf in Resources */,
+				853A9E6D287ED94B007B4F41 /* DAZN_Oscine_A_Rg.ttf in Resources */,
 				853A9E30287D9489007B4F41 /* Main.storyboard in Resources */,
+				853A9E55287ED821007B4F41 /* DAZNTrim-LightItalic.ttf in Resources */,
+				853A9E5E287ED821007B4F41 /* DAZNTrim-MediumItalic.ttf in Resources */,
+				853A9E6C287ED94B007B4F41 /* DAZN_Oscine_A_Bd.ttf in Resources */,
+				853A9E59287ED821007B4F41 /* DAZNTrim-Regular.ttf in Resources */,
+				853A9E5A287ED821007B4F41 /* DAZNTrim-SemiBoldItalic.ttf in Resources */,
+				853A9E5D287ED821007B4F41 /* DAZNTrim-BoldItalic.ttf in Resources */,
+				853A9E56287ED821007B4F41 /* DAZNTrim-ExtraBoldItalic.ttf in Resources */,
+				853A9E5C287ED821007B4F41 /* DAZNTrim-Italic.ttf in Resources */,
+				853A9E70287ED94B007B4F41 /* DAZN_Oscine_A_XBd.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +309,7 @@
 			files = (
 				853A9E2D287D9489007B4F41 /* ViewController.swift in Sources */,
 				853A9E3D287E9DBD007B4F41 /* Colors.swift in Sources */,
+				853A9E74287F1822007B4F41 /* VCExtensions.swift in Sources */,
 				853A9E29287D9489007B4F41 /* AppDelegate.swift in Sources */,
 				853A9E3F287EA42C007B4F41 /* LoginViewModel.swift in Sources */,
 				853A9E2B287D9489007B4F41 /* SceneDelegate.swift in Sources */,
