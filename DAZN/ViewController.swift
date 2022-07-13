@@ -308,16 +308,21 @@ extension ViewController{
                 self.startTypingPassword()
             })
             
-            loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{
+        loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ [self] in
                 boolValEmail = true
                 
-                
-                
+                guard let text = loginTextField.text, !text.isEmpty else{
+                        
                 self.finishTypingLogin()
+                    return
+                }
             })
-            passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{
+            passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ [self] in
                 boolValPassword = true
+                guard let text = passwordTextField.text, !text.isEmpty else{
                 self.finishTypingPassword()
+                    return
+                }
             })
             
            
