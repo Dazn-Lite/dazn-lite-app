@@ -150,6 +150,7 @@ extension ViewController{
         
         passwordLabel.text = "Password"
         passwordLabel.textColor = Color.Chalk.getColor
+        passwordTextField.isSecureTextEntry = true
        
         
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -209,6 +210,8 @@ extension ViewController{
         
         eyeButton.setTitle("", for: .normal)
         eyeButton.setImage(UIImage(systemName:"eye"), for: .normal)
+        eyeButton.setImage(UIImage(systemName:"checkmark"), for: .selected)
+        eyeButton.contentMode = .scaleAspectFit
         eyeButton.tintColor = Color.Chalk.getColor
         eyeButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
@@ -221,8 +224,8 @@ extension ViewController{
         
     }
     
-    @objc func buttonTapped(){
-      
+    @objc func buttonTapped(_ sender: Any){
+        eyeButton.isSelected.toggle()
         passwordTextField.isSecureTextEntry.toggle()
     }
     
