@@ -222,14 +222,12 @@ extension ViewController{
     }
     
     @objc func buttonTapped(){
-        startTypingLogin()
-        startTypingPassword()
+      
         passwordTextField.isSecureTextEntry.toggle()
     }
     
     @objc func loginTapped(){
-        finishTypingLogin()
-        finishTypingPassword()
+      
     }
 }
     
@@ -286,7 +284,7 @@ extension ViewController{
 extension ViewController{
     func setupRx(){
         
-            loginTextField.becomeFirstResponder()
+            //loginTextField.becomeFirstResponder()
             
             //Starting the Reactive publishing for both the Email and Password fields. Connecting them with "loginViewModel" so they can be published as events there.
             loginTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.usernameTextPublishSubject).disposed(by: disposeBag)
@@ -301,14 +299,29 @@ extension ViewController{
             loginTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe(onNext:{ boolValEmail = true})
             passwordTextField.rx.controlEvent([.editingDidEndOnExit]).subscribe(onNext:{ boolValPassword = true})
             
-            loginTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValEmail = false})
-            passwordTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{ boolValPassword = false})
+            loginTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{
+                boolValEmail = false
+                self.startTypingLogin()
+            })
+            passwordTextField.rx.controlEvent([.editingDidBegin]).subscribe(onNext:{
+                boolValPassword = false
+                self.startTypingPassword()
+            })
             
-            loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValEmail = true})
-            passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{ boolValPassword = true})
+            loginTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{
+                boolValEmail = true
+                
+                
+                
+                self.finishTypingLogin()
+            })
+            passwordTextField.rx.controlEvent([.editingDidEnd]).subscribe(onNext:{
+                boolValPassword = true
+                self.finishTypingPassword()
+            })
             
            
-             
+       
           
              
             //Setting the "INCORRECT EMAIL" and "INCORRECT PASSWORD" Red Labels Invisible and visible depending on the "isEmailValid" and "isPasswordValid"
